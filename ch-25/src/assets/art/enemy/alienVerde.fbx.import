@@ -1,0 +1,99 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://6is2hv2p6j1g"
+path="res://.godot/imported/alienVerde.fbx-32993f7a5f3b0fbfa7e995c951a4ff0c.scn"
+
+[deps]
+
+source_file="res://src/assets/art/enemy/alienVerde.fbx"
+dest_files=["res://.godot/imported/alienVerde.fbx-32993f7a5f3b0fbfa7e995c951a4ff0c.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"palette.001": {
+"use_external/enabled": false,
+"use_external/path": "uid://b5jp8c4t285od"
+},
+"palette.002": {
+"use_external/enabled": false,
+"use_external/path": "uid://b5jp8c4t285od"
+},
+"palette.003": {
+"use_external/enabled": false,
+"use_external/path": "uid://b5jp8c4t285od"
+},
+"palette.004": {
+"use_external/enabled": false,
+"use_external/path": "uid://b5jp8c4t285od"
+},
+"palette.005": {
+"use_external/enabled": false,
+"use_external/path": "uid://b5jp8c4t285od"
+},
+"palette.006": {
+"use_external/enabled": false,
+"use_external/path": "uid://b5jp8c4t285od"
+},
+"palette.007": {
+"use_external/enabled": false,
+"use_external/path": "uid://b5jp8c4t285od"
+},
+"palette.008": {
+"use_external/enabled": false,
+"use_external/path": "uid://b5jp8c4t285od"
+}
+},
+"nodes": {
+"PATH:Armature/Skeleton3D/Untitled": {
+"mesh_instance/layers": 2
+},
+"PATH:Armature/Skeleton3D/Untitled_001": {
+"mesh_instance/layers": 2
+},
+"PATH:Armature/Skeleton3D/Untitled_002": {
+"mesh_instance/layers": 2
+},
+"PATH:Armature/Skeleton3D/Untitled_003": {
+"mesh_instance/layers": 2
+},
+"PATH:Armature/Skeleton3D/Untitled_004": {
+"mesh_instance/layers": 2
+},
+"PATH:Armature/Skeleton3D/Untitled_005": {
+"mesh_instance/layers": 2
+},
+"PATH:Armature/Skeleton3D/Untitled_006": {
+"mesh_instance/layers": 2
+},
+"PATH:Armature/Skeleton3D/Untitled_007": {
+"mesh_instance/layers": 2
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1

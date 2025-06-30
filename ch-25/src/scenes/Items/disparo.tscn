@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjdfaoj0fbh4o"]
+
+[ext_resource type="Script" uid="uid://bqutc25e5wokn" path="res://src/script/Codes/disparo.gd" id="1_xxeja"]
+[ext_resource type="AudioStream" uid="uid://btt32xhc3qw61" path="res://src/assets/sounds/sounds/disparo.wav" id="2_ry5mv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xxeja"]
+size = Vector3(0.1, 0.1, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j0dxa"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.959909, 0.747366, 3.85046e-07, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l4muh"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="Disparo" type="Area3D"]
+script = ExtResource("1_xxeja")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_xxeja")
+surface_material_override/0 = SubResource("StandardMaterial3D_j0dxa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_l4muh")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.960784, 0.74902, 0, 1)
+shadow_enabled = true
+
+[node name="AudioDisparo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ry5mv")
+autoplay = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

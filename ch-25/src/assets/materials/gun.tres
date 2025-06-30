@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d1tr00036hcv5"]
+
+[ext_resource type="Texture2D" uid="uid://cplrxvgpb1jjn" path="res://src/assets/art/player/img/Gun_Content_diffuse.png" id="1_5wgs2"]
+
+[resource]
+albedo_texture = ExtResource("1_5wgs2")
+texture_filter = 0

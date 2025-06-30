@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://bxabtrsri5t6c"]
+
+[ext_resource type="Script" uid="uid://p28nr4a3aogf" path="res://src/script/Interfaces/nivel_01.gd" id="1_2kbmf"]
+[ext_resource type="PackedScene" uid="uid://b6ckx0w87sbqe" path="res://src/scenes/player_gui.tscn" id="1_h52gx"]
+[ext_resource type="PackedScene" uid="uid://c1f4op0rr1352" path="res://src/scenes/Niveles/terreno_01.tscn" id="2_jfct6"]
+[ext_resource type="AudioStream" uid="uid://djklj67jow155" path="res://src/assets/sounds/music/Linkin Park - Breaking the Habit (Instrumental).mp3" id="4_o5w4k"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jfct6"]
+sky_top_color = Color(0.185852, 0.177242, 0.306016, 1)
+sky_horizon_color = Color(0.203422, 0.20127, 0.233463, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.203422, 0.20127, 0.233463, 1)
+
+[sub_resource type="Sky" id="Sky_o5w4k"]
+sky_material = SubResource("ProceduralSkyMaterial_jfct6")
+
+[sub_resource type="Environment" id="Environment_o5w4k"]
+background_mode = 2
+sky = SubResource("Sky_o5w4k")
+tonemap_mode = 2
+glow_enabled = true
+glow_blend_mode = 0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+
+[node name="Nivel01" type="Node"]
+script = ExtResource("1_2kbmf")
+
+[node name="Player_Gui" parent="." instance=ExtResource("1_h52gx")]
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0.257593, 0.000631283, 0.624096, 1)
+shadow_enabled = true
+shadow_blur = 0.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D"]
+environment = SubResource("Environment_o5w4k")
+
+[node name="Terreno_01" parent="." instance=ExtResource("2_jfct6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5775, 0, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_o5w4k")
+autoplay = true

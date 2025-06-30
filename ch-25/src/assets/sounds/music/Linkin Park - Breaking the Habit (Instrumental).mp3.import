@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djklj67jow155"
+path="res://.godot/imported/Linkin Park - Breaking the Habit (Instrumental).mp3-d3e212c8d7abdfc145239c3fdb6d157b.mp3str"
+
+[deps]
+
+source_file="res://src/assets/sounds/music/Linkin Park - Breaking the Habit (Instrumental).mp3"
+dest_files=["res://.godot/imported/Linkin Park - Breaking the Habit (Instrumental).mp3-d3e212c8d7abdfc145239c3fdb6d157b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

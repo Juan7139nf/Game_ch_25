@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dkwqa8h5qlrvh"
+path="res://.godot/imported/Sauce.obj-5577a9de9f621c036e85684203ba954e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Sauce.obj-5577a9de9f621c036e85684203ba954e.mesh"]
+
+source_file="res://src/assets/art/terreno/arboles/Sauce.obj"
+dest_files=["res://.godot/imported/Sauce.obj-5577a9de9f621c036e85684203ba954e.mesh", "res://.godot/imported/Sauce.obj-5577a9de9f621c036e85684203ba954e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

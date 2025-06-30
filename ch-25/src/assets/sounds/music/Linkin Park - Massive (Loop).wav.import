@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://debsxmiq6jrta"
+path="res://.godot/imported/Linkin Park - Massive (Loop).wav-7dcd9beffac0a0779a598b0abfdee950.sample"
+
+[deps]
+
+source_file="res://src/assets/sounds/music/Linkin Park - Massive (Loop).wav"
+dest_files=["res://.godot/imported/Linkin Park - Massive (Loop).wav-7dcd9beffac0a0779a598b0abfdee950.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=11025.0
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,160 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1v53bdqfeb3v"]
+
+[ext_resource type="Script" uid="uid://c2ry0x5fsk6bh" path="res://src/script/Interfaces/interfaz.gd" id="1_4jhjt"]
+[ext_resource type="FontFile" uid="uid://d27hiqvgb2k01" path="res://src/assets/gui/font/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="2_kf72l"]
+[ext_resource type="FontFile" uid="uid://c7pokr7yfvjqd" path="res://src/assets/gui/font/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_qsf5h"]
+[ext_resource type="FontFile" uid="uid://dorbn6j6xo7ri" path="res://src/assets/gui/font/Micro_5/Micro5-Regular.ttf" id="3_i88ja"]
+[ext_resource type="FontFile" uid="uid://lxkokwo4wqbv" path="res://src/assets/gui/font/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="4_d6bg3"]
+[ext_resource type="AudioStream" uid="uid://debsxmiq6jrta" path="res://src/assets/sounds/music/Linkin Park - Massive (Loop).wav" id="5_i88ja"]
+[ext_resource type="FontFile" uid="uid://bguddgrrunh7w" path="res://src/assets/gui/font/Pixelify_Sans/static/PixelifySans-Medium.ttf" id="6_dmetd"]
+
+[node name="Interfaz" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4jhjt")
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="puntuación" type="BoxContainer" parent="BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="Label" type="Label" parent="BoxContainer/puntuación"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_kf72l")
+theme_override_font_sizes/font_size = 30
+text = "     Puntuación: "
+
+[node name="score" type="Label" parent="BoxContainer/puntuación"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_i88ja")
+theme_override_font_sizes/font_size = 45
+text = "0"
+
+[node name="Label" type="Label" parent="BoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_i88ja")
+theme_override_font_sizes/font_size = 80
+
+[node name="Fases" type="BoxContainer" parent="BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="Label" type="Label" parent="BoxContainer/Fases"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_kf72l")
+theme_override_font_sizes/font_size = 30
+text = "Fases: "
+
+[node name="scoreF" type="Label" parent="BoxContainer/Fases"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_i88ja")
+theme_override_font_sizes/font_size = 45
+text = "0"
+
+[node name="Label2" type="Label" parent="BoxContainer/Fases"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_d6bg3")
+theme_override_font_sizes/font_size = 30
+text = " / "
+
+[node name="Label3" type="Label" parent="BoxContainer/Fases"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_i88ja")
+theme_override_font_sizes/font_size = 45
+text = "6   "
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.694118, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("2_qsf5h")
+theme_override_font_sizes/font_size = 140
+text = "AGUANTASTE!!"
+
+[node name="MenuPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -125.0
+offset_right = 150.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_qsf5h")
+theme_override_font_sizes/font_size = 50
+text = "PAUSADO"
+horizontal_alignment = 1
+
+[node name="Btn_Renaudar" type="Button" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_dmetd")
+theme_override_font_sizes/font_size = 40
+text = "Reanudar"
+
+[node name="Btn_Reiniciar" type="Button" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_dmetd")
+theme_override_font_sizes/font_size = 40
+text = "Reiniciar"
+
+[node name="Btn_Inicio" type="Button" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_dmetd")
+theme_override_font_sizes/font_size = 40
+text = "Inicio"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_i88ja")
+volume_db = -5.0
+
+[connection signal="pressed" from="MenuPanel/VBoxContainer/Btn_Renaudar" to="." method="_on_btn_renaudar_pressed"]
+[connection signal="pressed" from="MenuPanel/VBoxContainer/Btn_Reiniciar" to="." method="_on_btn_reiniciar_pressed"]
+[connection signal="pressed" from="MenuPanel/VBoxContainer/Btn_Inicio" to="." method="_on_btn_inicio_pressed"]

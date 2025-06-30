@@ -1,0 +1,968 @@
+[gd_scene load_steps=50 format=3 uid="uid://ckffb2p7yqskm"]
+
+[ext_resource type="ArrayMesh" uid="uid://87i1e3b5sjox" path="res://src/assets/art/models/Menu/Station_Charge.obj" id="1_h7v81"]
+[ext_resource type="Script" uid="uid://due1g3c51nsf0" path="res://src/script/Interfaces/menu.gd" id="1_vd127"]
+[ext_resource type="Texture2D" uid="uid://b0rtbje3gewhf" path="res://src/assets/materials/full_hd.hdr" id="2_4owwn"]
+[ext_resource type="ArrayMesh" uid="uid://cy2ou6molpxr2" path="res://src/assets/art/models/Menu/Menu.obj" id="4_50bkv"]
+[ext_resource type="Texture2D" uid="uid://daux1qvryfkyt" path="res://src/assets/art/models/img/menu_Content_diffuse.png" id="5_echhp"]
+[ext_resource type="ArrayMesh" uid="uid://dkwqa8h5qlrvh" path="res://src/assets/art/terreno/arboles/Sauce.obj" id="7_lucli"]
+[ext_resource type="Texture2D" uid="uid://vdh8lpg0c1s0" path="res://src/assets/art/terreno/img/Arbol_Sauce_diffuse.png" id="8_mbgrc"]
+[ext_resource type="ArrayMesh" uid="uid://cviqnk4ofnobu" path="res://src/assets/art/models/Menu/Foco.obj" id="9_1lium"]
+[ext_resource type="ArrayMesh" uid="uid://caq4kcpt2hu3j" path="res://src/assets/art/models/Menu/Laptop.obj" id="10_d0ab0"]
+[ext_resource type="Texture2D" uid="uid://coyqv71pr01r8" path="res://src/assets/art/models/img/Main_diffuse.png" id="11_cl5kb"]
+[ext_resource type="Texture2D" uid="uid://oqmroovlvs81" path="res://src/assets/art/models/img/Item.png" id="12_1lium"]
+[ext_resource type="Texture2D" uid="uid://ciy84eqi7j4oi" path="res://src/assets/art/models/img/Main_Emision.png" id="12_wxvhi"]
+[ext_resource type="ArrayMesh" uid="uid://2lhg41roncln" path="res://src/assets/art/models/Menu/Silla.obj" id="13_cl5kb"]
+[ext_resource type="ArrayMesh" uid="uid://cqiuk8grdhiwh" path="res://src/assets/art/models/Menu/Vidrio.obj" id="13_d0ab0"]
+[ext_resource type="ArrayMesh" uid="uid://bc7y1m8kv777a" path="res://src/assets/art/models/Menu/item.obj" id="14_cl5kb"]
+[ext_resource type="AudioStream" uid="uid://xe65an7sr2ml" path="res://src/assets/sounds/sounds/linkin park - One Step Closer (Drums).wav" id="15_o88in"]
+[ext_resource type="AudioStream" uid="uid://5qdq1ggmrpnf" path="res://src/assets/sounds/music/Linkin Park - Resolution (Intro).wav" id="16_o88in"]
+[ext_resource type="FontFile" uid="uid://c7pokr7yfvjqd" path="res://src/assets/gui/font/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="16_wxvhi"]
+[ext_resource type="Texture2D" uid="uid://bgo4c656eivbm" path="res://src/assets/gui/img/Logo.png" id="19_guipw"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_guipw"]
+panorama = ExtResource("2_4owwn")
+energy_multiplier = 0.8
+
+[sub_resource type="Sky" id="Sky_echhp"]
+sky_material = SubResource("PanoramaSkyMaterial_guipw")
+
+[sub_resource type="Environment" id="Environment_vd127"]
+background_mode = 2
+sky = SubResource("Sky_echhp")
+sky_rotation = Vector3(0, -2.89027, 0)
+tonemap_mode = 1
+tonemap_exposure = 2.0
+ssao_enabled = true
+glow_enabled = true
+glow_strength = 0.7
+glow_blend_mode = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vd127"]
+albedo_texture = ExtResource("5_echhp")
+metallic_specular = 1.0
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vx1f3"]
+albedo_texture = ExtResource("8_mbgrc")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o88in"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4owwn"]
+albedo_texture = ExtResource("11_cl5kb")
+emission_enabled = true
+emission_energy_multiplier = 0.0
+emission_texture = ExtResource("12_wxvhi")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cl5kb"]
+transparency = 1
+blend_mode = 4
+cull_mode = 2
+albedo_color = Color(0.121569, 0.121569, 0.121569, 0.388235)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wxvhi"]
+albedo_texture = ExtResource("12_1lium")
+metallic = 1.0
+metallic_specular = 0.0
+roughness = 0.2
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_guipw"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0.154043, 0.0782193, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ov8q0"]
+albedo_texture = ExtResource("12_1lium")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aum5o"]
+albedo_texture = ExtResource("12_1lium")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gx4at"]
+albedo_texture = ExtResource("12_1lium")
+emission_enabled = true
+emission_energy_multiplier = 1.5
+emission_texture = ExtResource("12_1lium")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_itp8w"]
+albedo_texture = ExtResource("12_1lium")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f52de"]
+albedo_texture = ExtResource("12_1lium")
+emission_enabled = true
+emission_energy_multiplier = 2.0
+emission_texture = ExtResource("12_1lium")
+texture_filter = 0
+
+[sub_resource type="Animation" id="Animation_o88in"]
+resource_name = "Charge"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Node3D/StationCharge:surface_material_override/1:emission")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.50245),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0.154043, 0.0782193, 1), Color(1, 0.358499, 0.279509, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Node3D/StationCharge:surface_material_override/1:emission_energy_multiplier")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.50245),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [5.0, 8.0]
+}
+
+[sub_resource type="Animation" id="Animation_guipw"]
+resource_name = "Charge_Info"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Node3D/StationCharge:surface_material_override/1:emission")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.50245),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(2.31028e-06, 0.551838, 0.813522, 1), Color(0.12443, 0.692286, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Node3D/StationCharge:surface_material_override/1:emission_energy_multiplier")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.513256),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [7.0, 9.0]
+}
+
+[sub_resource type="Animation" id="Animation_ov8q0"]
+resource_name = "Charge_Success"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Node3D/StationCharge:surface_material_override/1:emission")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0.627165, 0.154289, 1), Color(0.286727, 0.752072, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Node3D/StationCharge:surface_material_override/1:emission_energy_multiplier")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [8.0, 12.0]
+}
+
+[sub_resource type="Animation" id="Animation_4owwn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Node3D/StationCharge:surface_material_override/1:emission")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.154043, 0.0782193, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Node3D/StationCharge:surface_material_override/1:emission_energy_multiplier")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [5.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ov8q0"]
+_data = {
+&"Charge": SubResource("Animation_o88in"),
+&"Charge_Info": SubResource("Animation_guipw"),
+&"Charge_Success": SubResource("Animation_ov8q0"),
+&"RESET": SubResource("Animation_4owwn")
+}
+
+[sub_resource type="Animation" id="Animation_gx4at"]
+resource_name = "Menu"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.53333, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1.384, 1.431, 0.541), Vector3(1.384, 1.4, 0.541), Vector3(1.384, 1.431, 0.541)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.53333, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0523597, 0.833255, -0.0523598), Vector3(-0.0523599, 0.820305, -0.0523599), Vector3(-0.0523597, 0.833255, -0.0523598)]
+}
+
+[sub_resource type="Animation" id="Animation_befd5"]
+resource_name = "Option"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.384, 1.431, 0.541), Vector3(-0.081, 1.146, -1.299)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.0523597, 0.833255, -0.0523598), Vector3(-0.485202, 1.91637, -0.0523599)]
+}
+
+[sub_resource type="Animation" id="Animation_5clvh"]
+resource_name = "Option_Menu"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.485202, 1.91637, -0.0523599), Vector3(-0.0523597, 0.833255, -0.0523598)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.081, 1.146, -1.299), Vector3(1.384, 1.431, 0.541)]
+}
+
+[sub_resource type="Animation" id="Animation_itp8w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.384, 1.431, 0.541)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0523597, 0.833255, -0.0523598)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("JugarAudio:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_f52de"]
+resource_name = "Success"
+length = 2.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.384, 1.431, 0.541), Vector3(0.324, 0.831, -0.084)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.0523597, 0.833255, -0.0523598), Vector3(-0.0523599, 0.39968, -0.0523599)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("JugarAudio:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f52de"]
+_data = {
+&"Menu": SubResource("Animation_gx4at"),
+&"Option": SubResource("Animation_befd5"),
+&"Option_Menu": SubResource("Animation_5clvh"),
+&"RESET": SubResource("Animation_itp8w"),
+&"Success": SubResource("Animation_f52de")
+}
+
+[sub_resource type="Animation" id="Animation_aum5o"]
+resource_name = "Apagar_Luces"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/OmniLight3D3:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/OmniLight3D2:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D/OmniLight3D:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node3D/Foco:surface_material_override/0:emission_energy_multiplier")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node3D/Item:surface_material_override/1:emission_energy_multiplier")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Node3D/Item:surface_material_override/3:emission_energy_multiplier")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Node3D/Laptop:surface_material_override/0:emission_energy_multiplier")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Node3D/StationCharge:surface_material_override/1:emission_energy_multiplier")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 2.0, 5.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_cl5kb"]
+resource_name = "Luces"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/OmniLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.0666667, 1.06667, 1.16667, 2.1, 2.2, 2.33333, 2.43333, 4.33333, 4.43333, 4.93333, 4.96667, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.1, 0.1, 0.0, 0.0, 0.2, 0.2, 0.0, 0.0, 0.15, 0.15, 0.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/Foco:surface_material_override/0:emission_energy_multiplier")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0500725, 0.066691, 1.06433, 1.16667, 2.1, 2.19758, 2.33244, 2.42533, 4.33333, 4.44059, 4.93185, 4.96917, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 2.0, 2.0, 0.0, 0.0, 4.0, 4.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D/OmniLight3D2:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.497048, 0.560447, 0.733333, 0.805001, 1.49655, 1.56045, 2.36667, 2.43333, 3.6, 3.66667, 4.03333, 4.1, 4.63333, 4.7, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.1, 0.1, 0.0, 0.0, 0.2, 0.2, 0.0, 0.0, 0.1, 0.1, 0.0, 0.0, 0.2, 0.2, 0.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node3D/Item:surface_material_override/1:emission_energy_multiplier")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.497048, 0.556477, 0.723961, 0.815807, 1.50735, 1.56585, 2.36667, 2.43661, 3.6, 3.66667, 4.03333, 4.1, 4.63333, 4.7, 5.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.5, 1.5, 0.03, 0.03, 2.0, 2.0, 0.03, 0.03, 1.5, 1.5, 0.03, 0.03, 2.0, 2.0, 0.03, 0.03]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node3D/OmniLight3D3:light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.28094, 0.64292, 0.961679, 1.04812, 1.39389, 1.55598, 2.27994, 2.51765, 2.79859, 3.16057, 3.47933, 3.56578, 3.91155, 4.07363, 4.79759),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.07, 0.07, 0.1, 0.1, 0.03, 0.03, 0.2, 0.2, 0.07, 0.07, 0.1, 0.1, 0.03, 0.03, 0.2, 0.2]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Node3D/Item:surface_material_override/3:emission_energy_multiplier")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.28094, 0.637518, 0.967082, 1.04812, 1.3993, 1.55598, 2.28534, 2.51765, 2.79859, 3.15517, 3.48474, 3.56578, 3.91695, 4.07363, 4.80299),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [2.0, 2.0, 2.5, 2.5, 1.0, 1.0, 3.0, 3.0, 2.0, 2.0, 2.5, 2.5, 1.0, 1.0, 3.0, 3.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Node3D/Silla:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.0098),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.592, 0.09, 0.06), Vector3(-0.58, 0.09, 0.06)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Node3D/Silla:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.0098),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.0872665, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wxvhi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/OmniLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/Foco:surface_material_override/0:emission_energy_multiplier")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D/OmniLight3D2:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node3D/Item:surface_material_override/1:emission_energy_multiplier")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node3D/OmniLight3D3:light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.07]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Node3D/Item:surface_material_override/3:emission_energy_multiplier")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Node3D/Silla:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.591672, 0.1, 0.06)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Node3D/Silla:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Node3D/Laptop:surface_material_override/0:emission_energy_multiplier")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Node3D/StationCharge:surface_material_override/1:emission_energy_multiplier")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o88in"]
+_data = {
+&"Apagar_Luces": SubResource("Animation_aum5o"),
+&"Luces": SubResource("Animation_cl5kb"),
+&"RESET": SubResource("Animation_wxvhi")
+}
+
+[node name="Menu" type="Node"]
+script = ExtResource("1_vd127")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D"]
+transform = Transform3D(0.906308, 0.158316, 0.391845, 0, 0.927184, -0.374607, -0.422618, 0.339509, 0.840314, 0, 5.08737, 0)
+light_energy = 0.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D"]
+environment = SubResource("Environment_vd127")
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+transform = Transform3D(0.673576, -0.00348757, 0.73911, -0.0522642, 0.997261, 0.0523358, -0.737268, -0.0738811, 0.671549, 1.384, 1.431, 0.541)
+far = 20.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.52079, 0)
+light_energy = 0.0
+light_size = 0.5
+shadow_enabled = true
+shadow_blur = 2.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.948848, 1.17784, -1.76928)
+light_color = Color(0.921569, 0.705882, 0.443137, 1)
+light_energy = 0.1
+shadow_enabled = true
+shadow_blur = 2.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28132, 1.99414, 0.595891)
+light_color = Color(0.92549, 0.721569, 0.541176, 1)
+light_energy = 0.07
+shadow_enabled = true
+shadow_blur = 2.0
+omni_range = 0.5
+
+[node name="Menu" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0010727, 0, -0.000358909)
+mesh = ExtResource("4_50bkv")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_vd127")
+
+[node name="Sauce" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.77, -3, -8.194)
+mesh = ExtResource("7_lucli")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_vx1f3")
+
+[node name="Foco" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6, 0)
+mesh = ExtResource("9_1lium")
+surface_material_override/0 = SubResource("StandardMaterial3D_o88in")
+
+[node name="Laptop" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.909221, 0.799409, 0.069232)
+mesh = ExtResource("10_d0ab0")
+surface_material_override/0 = SubResource("StandardMaterial3D_4owwn")
+
+[node name="Vidrio" type="MeshInstance3D" parent="Node3D"]
+mesh = ExtResource("13_d0ab0")
+surface_material_override/0 = SubResource("StandardMaterial3D_cl5kb")
+
+[node name="StationCharge" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.78, 0.1, -0.92)
+mesh = ExtResource("1_h7v81")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_wxvhi")
+surface_material_override/1 = SubResource("StandardMaterial3D_guipw")
+
+[node name="Silla" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.591672, 0.1, 0.06)
+mesh = ExtResource("13_cl5kb")
+surface_material_override/0 = SubResource("StandardMaterial3D_ov8q0")
+
+[node name="Item" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000108004, -0.00245929, -0.000353336)
+mesh = ExtResource("14_cl5kb")
+surface_material_override/0 = SubResource("StandardMaterial3D_aum5o")
+surface_material_override/1 = SubResource("StandardMaterial3D_gx4at")
+surface_material_override/2 = SubResource("StandardMaterial3D_itp8w")
+surface_material_override/3 = SubResource("StandardMaterial3D_f52de")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D"]
+root_node = NodePath("../../AnimationPlayer")
+libraries = {
+&"": SubResource("AnimationLibrary_ov8q0")
+}
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.79846, 0.116039, -3.94393)
+light_color = Color(1, 0.935425, 0.540553, 1)
+shadow_enabled = true
+shadow_blur = 2.0
+omni_range = 10.0
+
+[node name="AnimationCamera" type="AnimationPlayer" parent="Node3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_f52de")
+}
+
+[node name="JugarAudio" type="AudioStreamPlayer" parent="Node3D"]
+stream = ExtResource("15_o88in")
+volume_db = -4.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_o88in")
+autoplay = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -248.0
+offset_right = 259.0
+offset_bottom = -36.0
+grow_vertical = 0
+
+[node name="Btn_Jugar" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 0.694118, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 0.694118, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("16_wxvhi")
+theme_override_font_sizes/font_size = 50
+text = "JUGAR"
+
+[node name="Btn_Opciones" type="Button" parent="Control/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.619608, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 1, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("16_wxvhi")
+theme_override_font_sizes/font_size = 50
+text = "  Opciones  "
+
+[node name="Btn_Salir" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.737255, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.737255, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("16_wxvhi")
+theme_override_font_sizes/font_size = 50
+text = "SALIR"
+
+[node name="Panel" type="Panel" parent="Control"]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Control/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Opciones"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Control/Panel/HBoxContainer"]
+layout_mode = 2
+text = "X"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Control/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+Musica"
+
+[node name="HScrollBar" type="HScrollBar" parent="Control/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+value = 100.0
+
+[node name="Button" type="Button" parent="Control/Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Restablecer"
+
+[node name="BoxContainer" type="BoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -620.0
+offset_top = -218.0
+offset_right = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("19_guipw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_o88in")
+}
+
+[connection signal="pressed" from="Control/VBoxContainer/Btn_Jugar" to="." method="_on_btn_jugar_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Btn_Opciones" to="." method="_on_btn_opciones_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Btn_Salir" to="." method="_on_btn_salir_pressed"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://xdpwj5dfivjw"]
+
+[ext_resource type="Script" uid="uid://bonwhgci06uam" path="res://src/script/Interfaces/presentacion.gd" id="1_r4anu"]
+[ext_resource type="VideoStream" uid="uid://dmvw1hyarfftb" path="res://src/assets/gui/intro/Introduccion.ogv" id="2_tb5kq"]
+
+[node name="Presentacion" type="Node"]
+script = ExtResource("1_r4anu")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_tb5kq")
+volume_db = 10.0

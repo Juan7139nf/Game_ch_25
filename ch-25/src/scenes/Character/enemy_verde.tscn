@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=3 uid="uid://byaqx1cbrutbw"]
+
+[ext_resource type="Script" uid="uid://cehhgufy6mct5" path="res://src/script/Codes/enemy3d.gd" id="1_6fxyc"]
+[ext_resource type="PackedScene" uid="uid://cm7ohvwy63rm2" path="res://src/scenes/Character/alien_verde.tscn" id="1_rwme5"]
+[ext_resource type="AudioStream" uid="uid://bypptx1a6d2bv" path="res://src/assets/sounds/sounds/explosion.mp3" id="3_41xb8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6fxyc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_41xb8"]
+radius = 0.55
+
+[sub_resource type="Animation" id="Animation_56buy"]
+resource_name = "Muerto"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [2.0, 5.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_41xb8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+
+[sub_resource type="Animation" id="Animation_6fxyc"]
+resource_name = "Run"
+length = 0.3
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [2.0, 2.5, 2.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0mhrt"]
+_data = {
+&"Muerto": SubResource("Animation_56buy"),
+&"RESET": SubResource("Animation_41xb8"),
+&"Run": SubResource("Animation_6fxyc")
+}
+
+[node name="Enemy_Verde" type="CharacterBody3D"]
+script = ExtResource("1_6fxyc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_6fxyc")
+
+[node name="alienVerde" parent="." instance=ExtResource("1_rwme5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CapsuleShape3D_41xb8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0mhrt")
+}
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.517647, 0.901961, 0, 1)
+light_energy = 2.0
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+omni_range = 2.0
+omni_attenuation = 0.5
+
+[node name="AudioExploxion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_41xb8")
+volume_db = -8.0
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

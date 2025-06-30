@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6ckx0w87sbqe"]
+
+[ext_resource type="Script" uid="uid://y8khcrfm4qch" path="res://src/script/Codes/camara_test.gd" id="1_yhct5"]
+[ext_resource type="Script" uid="uid://p3vqrph6osuf" path="res://src/script/Codes/player_ch_25.gd" id="2_yhct5"]
+[ext_resource type="PackedScene" uid="uid://b8rdlj8xpwpa2" path="res://src/assets/art/player/robot.fbx" id="4_i7yq0"]
+[ext_resource type="PackedScene" uid="uid://b1v53bdqfeb3v" path="res://src/scenes/interfaz.tscn" id="4_k0vc0"]
+[ext_resource type="AudioStream" uid="uid://dmckvioer0g84" path="res://src/assets/sounds/sounds/engine-rev-idle-mono.mp3" id="4_nlj8l"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pixv2"]
+
+[node name="Player_Gui" type="Node"]
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Node3D2" type="Node3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52115, 0)
+script = ExtResource("1_yhct5")
+
+[node name="Camera3D" type="Camera3D" parent="Node3D/Node3D2"]
+transform = Transform3D(1, 0, 0, 0, 0.686263, 0.727353, 0, -0.727353, 0.686263, 0, 4.284, 4.762)
+fov = 50.0
+size = 8.619
+far = 20.0
+
+[node name="Ch_25" type="CharacterBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.521, 0)
+script = ExtResource("2_yhct5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Ch_25"]
+shape = SubResource("CapsuleShape3D_pixv2")
+
+[node name="robot" parent="Node3D/Ch_25" instance=ExtResource("4_i7yq0")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Ch_25"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.303797, -0.162223, -0.483286)
+
+[node name="AudioEngine" type="AudioStreamPlayer" parent="Node3D/Ch_25"]
+stream = ExtResource("4_nlj8l")
+
+[node name="Interfaz" parent="." instance=ExtResource("4_k0vc0")]

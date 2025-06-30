@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://d4m0kxecquwqs"]
+
+[ext_resource type="Script" uid="uid://bpuqs5orl12jb" path="res://src/script/Codes/moneda.gd" id="1_jefyf"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6c1q7"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 8.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqy0s"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.409332, 0.926542, 1.15514e-06, 1)
+emission_energy_multiplier = 1.2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_y0vaf"]
+
+[sub_resource type="Animation" id="Animation_75frr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5708, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ku0nc"]
+resource_name = "normal"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.5708, 0, 0), Vector3(1.5708, 3.14159, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_54xqc"]
+_data = {
+&"RESET": SubResource("Animation_75frr"),
+&"normal": SubResource("Animation_ku0nc")
+}
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("1_jefyf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(0.7, 0, 0, 0, -3.61999e-07, -0.7, 0, 0.1, -2.53399e-06, 0, 0, 0)
+mesh = SubResource("CylinderMesh_6c1q7")
+surface_material_override/0 = SubResource("StandardMaterial3D_hqy0s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_y0vaf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_54xqc")
+}
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Area3D"]
+light_color = Color(0.752331, 0.97464, 0, 1)
+light_energy = 2.0
+shadow_enabled = true
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
