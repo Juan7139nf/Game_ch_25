@@ -30,6 +30,8 @@ func _process(_delta: float) -> void:
 	$"BoxContainer/puntuación/score".text = str(Global.score)
 
 	if Global.fase == 6 and conteo == 0:
+		if Global.score >= 30:
+			$Label.text = "AGUANTASTE!!"
 		$Label.visible = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().paused = true

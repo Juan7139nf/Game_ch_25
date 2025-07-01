@@ -8,6 +8,8 @@ var ultima_pos_moneda: Vector3 = Vector3.INF
 
 @onready var anim = $alienVerde/AnimationPlayer
 
+var efecto_muerte = preload("res://src/scenes/Items/explosion_alien.tscn")
+
 func _ready() -> void:
 	add_to_group("enemigo")
 	$AnimationPlayer.play("Run")
@@ -68,6 +70,9 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	$AudioExploxion.playing = true
 	$AnimationPlayer.play("Muerto")
 	anim.play("Armature|Muerto")
+	var efecto = efecto_muerte.instantiate()
+	get_tree().current_scene.add_child(efecto)
+	efecto.global_position = self.global_position
 	if body.has_method("morir"):
 		body.call("morir")
 	await get_tree().create_timer(1.5).timeout

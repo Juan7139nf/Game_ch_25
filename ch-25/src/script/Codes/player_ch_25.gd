@@ -9,7 +9,7 @@ const RUN_MULTIPLIER = 2.0  # Velocidad al correr
 @onready var audioEngine = $AudioEngine
 
 var cubo_disparo = preload("res://src/scenes/Items/disparo.tscn")
-@export var tiempo_entre_disparos: float = 0.2
+@export var tiempo_entre_disparos: float = 0.175
 var efecto_muerte = preload("res://src/scenes/Items/explosion.tscn")
 
 var tiempo_disparo := 0.0
@@ -116,10 +116,6 @@ func morir():
 			var efecto = efecto_muerte.instantiate()
 			get_tree().current_scene.add_child(efecto)
 			efecto.global_position = self.global_position
-
-			# Eliminar el efecto tras 0.5 segundos
-			await get_tree().create_timer(0.5).timeout
-			efecto.queue_free()
 		
 		await anim.animation_finished
 		await get_tree().create_timer(2.5).timeout

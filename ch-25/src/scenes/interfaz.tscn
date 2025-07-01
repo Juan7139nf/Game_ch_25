@@ -42,6 +42,20 @@ theme_override_fonts/font = ExtResource("3_i88ja")
 theme_override_font_sizes/font_size = 45
 text = "0"
 
+[node name="Label4" type="Label" parent="BoxContainer/puntuación"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_d6bg3")
+theme_override_font_sizes/font_size = 30
+text = " / "
+
+[node name="Label5" type="Label" parent="BoxContainer/puntuación"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_i88ja")
+theme_override_font_sizes/font_size = 45
+text = "30"
+
 [node name="Label" type="Label" parent="BoxContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 20
@@ -57,7 +71,7 @@ layout_mode = 2
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_kf72l")
 theme_override_font_sizes/font_size = 30
-text = "Fases: "
+text = "Fase: "
 
 [node name="scoreF" type="Label" parent="BoxContainer/Fases"]
 layout_mode = 2
@@ -98,7 +112,9 @@ theme_override_colors/font_color = Color(1, 0.694118, 0, 1)
 theme_override_constants/outline_size = 40
 theme_override_fonts/font = ExtResource("2_qsf5h")
 theme_override_font_sizes/font_size = 140
-text = "AGUANTASTE!!"
+text = "Intentalo
+otra vez"
+horizontal_alignment = 1
 
 [node name="MenuPanel" type="Panel" parent="."]
 layout_mode = 1

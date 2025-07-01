@@ -14,7 +14,6 @@ config/name="CH-25"
 run/main_scene="uid://xdpwj5dfivjw"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://cna7ms3n3s1jb"
-config/windows_native_icon="res://src/assets/gui/img/Icono.ico"
 
 [audio]
 

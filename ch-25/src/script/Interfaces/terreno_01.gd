@@ -21,7 +21,7 @@ func spawn_enemigos() -> void:
 
 func spawnear_enemigo():
 	$AnimationPlayer_Luz_Verde.play("Nuevo_Enemigo")
-	# await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.55).timeout
 	var enemigo = enemigo_escena.instantiate()
 	get_parent().add_child(enemigo)
 
@@ -40,7 +40,7 @@ func spawnear_enemigo():
 				distancia_minima = dist
 				punto_cercano = punto
 
-	enemigo.global_position = punto_cercano.global_position
+	enemigo.global_position = punto_cercano.global_position - Vector3(0, 3.5, 0)
 
 	Global.enemigos_activos += 1
 
